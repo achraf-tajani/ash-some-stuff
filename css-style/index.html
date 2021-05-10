@@ -1,21 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Forms</title>
-</head>
-<body>
-<label for="" class="custom-select">   
-    selector
-    <select>
-        <option value="1">one</option>
-        <option value="2">two</option>
-        <option value="3">three</option>
-    </select>
-</label>
-<script src="main.js"></script>
-</body>
+  </head>
+  <body>
+    <div class="div1">
+      <label for="" class="custom-select-1">
+        <select>
+          <option value="1">Tous</option>
+          <option value="2">Titre</option>
+          <option value="3">Table des matières/Légendes</option>
+          <option value="4">Sujet</option>
+          <option value="5">Sources/Cote</option>
+          <option value="6">Éditeur</option>
+          <option value="7">Notice</option>
+          <option value="8">ISBN</option>
+          <option value="9">Collection</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="div2">
+      <div class="custom-select">
+        <select>
+          <option value="0">Select car:</option>
+          <option value="1">Audi</option>
+          <option value="2">BMW</option>
+          <option value="3">Citroen</option>
+          <option value="4">Ford</option>
+          <option value="5">Honda</option>
+          <option value="6">Jaguar</option>
+          <option value="7">Land Rover</option>
+          <option value="8">Mercedes</option>
+          <option value="9">Mini</option>
+          <option value="10">Nissan</option>
+          <option value="11">Toyota</option>
+          <option value="12">Volvo</option>
+        </select>
+      </div>
+    </div>
+    <div class="div3">
+      <label class="container">
+        <input type="checkbox" checked="checked" />
+        <span class="checkmark"></span>
+      </label>
+    </div>
+    <script src="main.js"></script>
+    <script>
+      var x, i, j, l, ll, selElmnt, a, b, c;
+
+      x = document.getElementsByClassName("custom-select");
+      l = x.length;
+      for (i = 0; i < l; i++) {
+        selElmnt = x[i].getElementsByTagName("select")[0];
+        ll = selElmnt.length;
+
+        a = document.createElement("DIV");
+        a.setAttribute("class", "select-selected");
+        a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+        x[i].appendChild(a);
+
+        b = document.createElement("DIV");
+        b.setAttribute("class", "select-items select-hide");
+        for (j = 1; j < ll; j++) {
+          c = document.createElement("DIV");
+          c.innerHTML = selElmnt.options[j].innerHTML;
+          c.addEventListener("click", function (e) {
+            var y, i, k, s, h, sl, yl;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            sl = s.length;
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < sl; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                yl = y.length;
+                for (k = 0; k < yl; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+          });
+          b.appendChild(c);
+        }
+        x[i].appendChild(b);
+        a.addEventListener("click", function (e) {
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+      }
+      function closeAllSelect(elmnt) {
+        var x,
+          y,
+          i,
+          xl,
+          yl,
+          arrNo = [];
+        x = document.getElementsByClassName("select-items");
+        y = document.getElementsByClassName("select-selected");
+        xl = x.length;
+        yl = y.length;
+        for (i = 0; i < yl; i++) {
+          if (elmnt == y[i]) {
+            arrNo.push(i);
+          } else {
+            y[i].classList.remove("select-arrow-active");
+          }
+        }
+        for (i = 0; i < xl; i++) {
+          if (arrNo.indexOf(i)) {
+            x[i].classList.add("select-hide");
+          }
+        }
+      }
+
+      document.addEventListener("click", closeAllSelect);
+    </script>
+  </body>
 </html>

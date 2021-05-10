@@ -1,29 +1,31 @@
 body {
-    width: 100vw;
-    height: 100vh;
+    height: 90vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
-*,*::after,*::before{
+*, *::after, *::before {
     box-sizing: border-box;
 }
 
-.custom-select{
+.div1+.div2 {
+    margin-bottom: 50px;
+}
+
+/* Custom select style 1 */
+
+.custom-select-1 {
     position: relative;
     display: inline-block;
-    font-size: 14px;
-    color:#888;
-    
+    color: #888;
+    width: 394.58px;
 }
-.custom-select select {
-    width: 200px;
+
+.custom-select-1 select {
     min-height: 35px;
-    background: #cbef77;
-    border-radius: 3px;
-    border:2px solid #2169f3;
     outline: none;
     padding: 4px 10px;
     width: 100%;
@@ -32,49 +34,188 @@ body {
     appearance: none;
     -moz-appearance: none;
     -webkit-appearance: none;
-    -ms-appearance: none; 
+    -ms-appearance: none;
+    border: none;
+    border-bottom: 3px solid #434343;
 }
 
-.custom-select::after{
-    content: '';
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent;
-    border-left-color: #222;
+.custom-select-1::after {
+    content: url(Symbole156–18.svg);
     display: inline-block;
     position: absolute;
     right: 10px;
     bottom: 10px;
-    transform: rotate(92deg);
     z-index: 0;
 }
-.custom-select select::-ms-expand {
+
+.custom-select-1 select::-ms-expand {
     display: none;
-  }
+}
 
-  .custom-select .selector-options{
-      list-style: none;
-      padding: 5px 0;
-      margin: 0;
-      background-color: tomato;
-      border-radius: 5px;
-      z-index: 1;
-      width: 100%;
-      position: absolute;
+.custom-select-1 .selector-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+}
 
-  }
+.custom-select-1 .selector-options li {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 0;
+    cursor: pointer;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    color: #434343;
+    border-bottom: 3px solid #434343;
+    border-left: 3px solid #434343;
+    border-right: 3px solid #434343;
+}
 
-  .custom-select .selector-options li{
-      height: 35px;
-      display: flex;
-      align-items: center;
-      padding: 0 10px;
-      cursor: pointer;
-      color: black;
+.custom-select-1 .selector-options li:hover {
+    background-color: #434343;
+    color: white;
+}
 
-  }
+/* Custom select style 0 */
 
-  .custom-select .selector-options li:hover{
-      background-color: brown;
-      color: white;
-  }
+.custom-select {
+    position: relative;
+    font-family: Arial;
+    border: 3px solid #434343;
+    width: 392.04px;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected:after {
+    content: url(Trace_36.svg);
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
+
+.select-selected::before {
+    content: "";
+    position: absolute;
+    background-color: #434343;
+    height: 38px;
+    width: 41px;
+    right: -1px;
+    top: -1px;
+}
+
+.select-items div, .select-selected {
+    color: #434343;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #434343;
+    border: 1px solid #434343;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* The container */
+
+.container {
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 24.23px;
+    width: 24.23px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
+    border: 3px solid #6F6F6F;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+    left: 5px;
+    top: 2px;
+    width: 8px;
+    height: 12px;
+    border: solid #6F6F6F;
+    border-width: 0 4px 3px 0;
+    -webkit-transform: rotate( 45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate( 45deg);
+}
