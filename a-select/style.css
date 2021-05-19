@@ -1,0 +1,177 @@
+/* ******************************************************************************************************* */
+
+/* custom style select   */
+
+.style1 {
+    position: relative;
+    font-family: Arial;
+    border: 3px solid #434343;
+    width: 392.04px;
+}
+
+.style1 select {
+    display: none;
+}
+
+.style1 .select-selected:after {
+    content: url(img/Trace_36.svg);
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+}
+
+.style1 .select-selected::before {
+    content: "";
+    position: absolute;
+    background-color: #434343;
+    height: 38px;
+    width: 41px;
+    right: -1px;
+    top: -1px;
+    cursor: pointer;
+}
+
+.style1 .select-selected {
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #434343;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.style1 .select-items div {
+    font-family: Roboto;
+    color: #434343;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.style1 .select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #434343;
+    border: 1px solid #434343;
+    background: white;
+    border: 3px solid #434343;
+}
+
+.style1 .select-items>div {
+    border-bottom: 3px solid #434343;
+    display: flex;
+    justify-content: space-between;
+}
+
+.style1 .select-items>div>i {
+    display: none;
+    font-size: 1.4rem;
+    color: #434343;
+    font-weight: 500;
+}
+
+.style1 .same-as-selected>i {
+    display: block !important;
+}
+
+.style1 .select-items>div:last-child {
+    border-bottom-color: transparent;
+}
+
+.style1 .select-hide {
+    display: none;
+}
+
+.style1 .select-items div:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/******************************************************************************************************** */
+
+.style2 {
+    position: relative;
+    font-family: Arial;
+    border-bottom: 3px solid #434343;
+    width: 392.04px;
+}
+
+.style2 select {
+    display: none;
+}
+
+.style2 .select-selected {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    color: #434343;
+    text-align: center;
+}
+
+.style2 .select-selected:after {
+    content: url(img/s-arrow.svg);
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
+
+.style2 .select-items div, .style2 .select-selected {
+    color: #434343;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+    user-select: none;
+}
+
+.style2 .select-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    color: #434343;
+    border: 3px solid #434343;
+    background: white;
+    text-align: center;
+}
+
+.style2 .select-items>div {
+    border-bottom: 3px solid #434343;
+}
+
+.style2 .select-items>div:last-child {
+    border-bottom-color: transparent;
+}
+
+.style2 .select-hide {
+    display: none;
+}
+
+.style2 .select-items div:hover, .style2 .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.tabIndexOPtion {
+    border: 3px dashed blue !important;
+}

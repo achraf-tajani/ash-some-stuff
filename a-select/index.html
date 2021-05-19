@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js"></script>
+    <style>
+      .wrap-select {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 80vh;
+      }
+      .wrap-select > div {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrap-select">
+      <div>
+        <input tabindex="1" type="text" />
+      </div>
+      <div>
+        <div
+          class="custom-select style1"
+          data-select="style1"
+          data-selected="false"
+        >
+          <select>
+            <option value="0">Select car</option>
+            <option value="1">Audi</option>
+            <option value="2">BMW</option>
+            <option value="3">Citroen</option>
+            <option value="4">Ford</option>
+            <option value="5">Honda</option>
+            <option value="6">Jaguar</option>
+            <option value="7">Land Rover</option>
+            <option value="8">Mercedes</option>
+            <option value="9">Mini</option>
+            <option value="10">Nissan</option>
+            <option value="11">Toyota</option>
+            <option value="12">Volvo</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <div
+          class="custom-select style2"
+          data-select="style2"
+          data-selected="false"
+        >
+          <select>
+            <option value="0">Select style:</option>
+            <option value="1">Audi</option>
+            <option value="2">BMW</option>
+            <option value="3">Citroen</option>
+            <option value="4">Ford</option>
+            <option value="5">Honda</option>
+            <option value="6">Jaguar</option>
+            <option value="7">Land Rover</option>
+            <option value="8">Mercedes</option>
+            <option value="9">Mini</option>
+            <option value="10">Nissan</option>
+            <option value="11">Toyota</option>
+            <option value="12">Volvo</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <input tabindex="4" type="text" />
+      </div>
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
