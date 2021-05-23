@@ -1,0 +1,378 @@
+:root {
+    --color1: #434343;
+    --color2: #000000;
+    --color3: #FFFFFF;
+    --color4: #DB0808;
+    --color5: #AEB0B1;
+    --color6: #f2f2f2;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    flex-direction: column;
+    background-color: var(--color6);
+    font-family: 'Roboto', sans-serif;
+}
+
+.custom-select:focus {
+    border: 3px darkblue dashed;
+}
+
+/* ********************************************************************************************************** */
+
+/* *********************************************STYLE 1****************************************************** */
+
+/* ********************************************************************************************************** */
+
+/* Dropdown wrap*/
+
+.style1 {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Dropdown select*/
+
+.style1 .dropdown-toggle {
+    appearance: none;
+    padding: 12px 19px 12px 0;
+    position: relative;
+    width: 300px;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    color: var(--color1);
+    border-bottom: 3px solid var(--color1);
+}
+
+/* Dropdown icon apparence down*/
+
+.style1 .dropdown-toggle::after {
+    content: "";
+    border-width: 6px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: inherit;
+    position: absolute;
+    right: 1px;
+    top: calc(50% + 3px);
+    transform: translateY(-50%);
+}
+
+/* Dropdown icon apparence up */
+
+.style1 .dropdown-toggle.active::after {
+    border-color: transparent;
+    border-bottom-color: inherit;
+    top: calc(50% - 3px);
+}
+
+/* Dropdown List */
+
+.style1 .dropdown-menu {
+    background-color: var(--color3);
+    border: 3px solid var(--color2);
+    color: var(--color2);
+    box-shadow: 0 1px 4px rgba(150, 150, 150, 0.65);
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    max-width: 320px;
+    width: calc(100% + 24px);
+    border-radius: 3px;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    max-height: 200px;
+    overflow: auto;
+    visibility: hidden;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 17px;
+    line-height: 20px;
+    /* identical to box height */
+    color: var(--color1);
+    text-align: center;
+}
+
+.style1 .dropdown-menu[aria-expanded="true"] {
+    visibility: visible;
+}
+
+.style1 .dropdown-menu li {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    border-bottom: 3px solid var(--color2);
+}
+
+.style1 .dropdown-menu li:last-child {
+    border-bottom: 0px;
+}
+
+.style1 .dropdown-menu li:hover, .style1 .dropdown-menu li:focus {
+    outline: none;
+    background-color: var(--color6);
+}
+
+/* ********************************************************************************************************** */
+
+/* *********************************************STYLE 2******************************************************* */
+
+/* ********************************************************************************************************** */
+
+/* Dropdown wrap*/
+
+.style2 {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Dropdown select*/
+
+.style2 .dropdown-toggle {
+    appearance: none;
+    padding: 12px 19px 12px 0;
+    position: relative;
+    width: 422.16px;
+    outline: none;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 20px;
+    color: var(--color1);
+    border: 3px solid var(--color1);
+    background-color: var(--color3);
+}
+
+/* Dropdown icon apparence down*/
+
+.style2 .dropdown-toggle::after {
+    content: "";
+    border-width: 6px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: var(--color3);
+    position: absolute;
+    right: 14px;
+    top: calc(50% + 3px);
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.style2 .dropdown-toggle::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-color: var(--color1);
+    width: 10%;
+    height: 103%;
+    top: -1px;
+    right: -1px;
+    z-index: 0;
+}
+
+/* Dropdown icon apparence up */
+
+.style2 .dropdown-toggle.active::after {
+    border-color: transparent;
+    border-bottom-color: var(--color3);
+    top: calc(50% - 3px);
+}
+
+/* Dropdown List */
+
+.style2 .dropdown-menu {
+    background-color: var(--color3);
+    color: var(--color2);
+    box-shadow: 0 1px 4px rgba(150, 150, 150, 0.65);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 422.16px;
+    border-radius: 3px;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    max-height: 200px;
+    overflow: auto;
+    visibility: hidden;
+    border-left: 3px solid #434343;
+    border-right: 3px solid #434343;
+    border-bottom: 3px solid #434343;
+}
+
+.style2 .dropdown-menu[aria-expanded="true"] {
+    visibility: visible;
+}
+
+.style2 .dropdown-menu li {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    border-bottom: 3px solid var(--color2);
+}
+
+.style2 .dropdown-menu li>div {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.style2 .dropdown-menu li>.li-option-wrap {
+    display: flex;
+    width: 80%;
+    justify-content: start;
+    align-items: center;
+}
+
+.style2 .dropdown-menu li>.li-option-wrap>div:nth-child(1) {
+    width: 10%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.style2 .dropdown-menu li>.li-option-wrap>div:nth-child(2) {
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10px;
+}
+
+.style2 .dropdown-menu li>.li-option-valid {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.style2 .dropdown-menu li:last-child {
+    border-bottom: 0px;
+}
+
+.style2 .dropdown-menu li:hover, .style1 .dropdown-menu li:focus {
+    outline: none;
+    background-color: var(--color6);
+}
+
+/* ********************************************************************************************************** */
+
+/* *********************************************STYLE 3******************************************************* */
+
+/* ********************************************************************************************************** */
+
+/* Dropdown wrap*/
+
+.style3 {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Dropdown select*/
+
+.style3 .dropdown-toggle {
+    appearance: none;
+    padding: 12px 19px 12px 0;
+    position: relative;
+    min-width: 172.12px;
+    outline: none;
+    overflow: hidden;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: var(--color1);
+    background-color: var(--color3);
+}
+
+/* Dropdown icon apparence down*/
+
+.style3 .dropdown-toggle::after {
+    content: "";
+    border-width: 6px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: transparent;
+    border-top-color: inherit;
+    position: absolute;
+    right: 8px;
+    top: calc(50% + 3px);
+    transform: translateY(-50%);
+}
+
+/* Dropdown icon apparence up */
+
+.style3 .dropdown-toggle.active::after {
+    border-color: transparent;
+    border-bottom-color: inherit;
+    top: calc(50% - 3px);
+}
+
+/* Dropdown List */
+
+.style3 .dropdown-menu {
+    background-color: var(--color3);
+    color: var(--color2);
+    box-shadow: 0 1px 4px rgba(150, 150, 150, 0.65);
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    max-width: 320px;
+    width: calc(100% + 24px);
+    border-radius: 3px;
+    z-index: 10;
+    position: absolute;
+    left: 50%;
+    bottom: 80%;
+    transform: translateX(-50%);
+    max-height: 200px;
+    overflow: auto;
+    visibility: hidden;
+}
+
+.style3 .dropdown-menu[aria-expanded="true"] {
+    visibility: visible;
+}
+
+.style3 .dropdown-menu li {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+}
+
+.style3 .dropdown-menu li:hover, .style1 .dropdown-menu li:focus {
+    outline: none;
+    background-color: var(--color6);
+}

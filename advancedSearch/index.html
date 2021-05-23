@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+  rel="stylesheet"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+/>
+<input type="text" tabindex="1" />
+<br />
+<br />
+<div class="style1 custom-select" tabindex="2">
+  <input type="hidden" name="select1" />
+  <button type="button" class="dropdown-toggle" aria-haspopup="true">
+    auteurs/contributeur, titres, texte, etc…
+  </button>
+  <ul class="dropdown-menu" role="listbox" aria-expanded="false">
+    <li role="option" tabindex="0" data-value="1">Tous</li>
+    <li role="option" tabindex="0" data-value="2">Auteur</li>
+    <li role="option" tabindex="0" data-value="3">Cinema</li>
+  </ul>
+</div>
+
+<br />
+<br />
+
+<div class="style2 custom-select" tabindex="3">
+  <input type="hidden" name="select2" />
+  <button type="button" class="dropdown-toggle" aria-haspopup="true">
+    Les types de documents
+  </button>
+  <ul class="dropdown-menu" role="listbox" aria-expanded="false">
+    <li role="option" tabindex="0" data-value="1">
+      <div class="li-option-wrap">
+        <div>
+          <i class="fas fa-globe-europe"></i>
+        </div>
+        <div>Tous</div>
+      </div>
+      <div class="li-option-valid">
+        <i class="fas fa-check"></i>
+      </div>
+    </li>
+    <li role="option" tabindex="0" data-value="2">
+      <div class="li-option-wrap">
+        <div>
+          <i class="fas fa-book"></i>
+        </div>
+        <div>Cartes</div>
+      </div>
+      <div class="li-option-valid">
+        <i class="fas fa-check"></i>
+      </div>
+    </li>
+    <li role="option" tabindex="0" data-value="3">
+      <div class="li-option-wrap">
+        <div>
+          <i class="fab fa-soundcloud"></i>
+        </div>
+        <div>Enregistrements sonores</div>
+      </div>
+      <div class="li-option-valid">
+        <i class="fas fa-check"></i>
+      </div>
+    </li>
+    <li role="option" tabindex="0" data-value="4">
+      <div class="li-option-wrap">
+        <div>
+          <i class="fab fa-youtube"></i>
+        </div>
+        <div>Vidéos</div>
+      </div>
+      <div class="li-option-valid">
+        <i class="fas fa-check"></i>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<br /><br />
+
+<div class="style3 custom-select" tabindex="4">
+  <input type="hidden" name="select3" />
+  <button type="button" class="dropdown-toggle" aria-haspopup="true">
+    Tous les mots
+  </button>
+  <ul class="dropdown-menu" role="listbox" aria-expanded="false">
+    <li role="option" tabindex="0" data-value="1">Collection 1</li>
+    <li role="option" tabindex="0" data-value="2">Collection 2</li>
+    <li role="option" tabindex="0" data-value="3">Collection 3</li>
+  </ul>
+</div>
+<br />
+<br />
+<input type="text" tabindex="5" />
+<script src="main.js"></script>
