@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="typehead.css" />
+    <title>Document</title>
+    <style>
+      #prefetch {
+        width: 100px;
+      }
+      .empty-message {
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="prefetch">
+        <input class="typeahead" type="text" placeholder="Countries" />
+      </div>
+    </div>
+    <div>
+      <input
+        type="hidden"
+        id="hid"
+        value='[{"value":"Achraf","age":30,"car":"c63"},{"value":"Nabil","age":30,"car":"v1"},{"value":"Mouhsine","age":30,"car":"v2"},{"value":"Kawtar","age":30,"car":"v3"},{"value":"Aicha","age":30,"car":"v4"},{"value":"Yacer","age":30,"car":"v5"},{"value":"Moussa","age":30,"car":"v6"}]'
+      />
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="dist/typeahead.jquery.min.js"></script>
+    <script src="dist/typeahead.bundle.min.js"></script>
+    <script src="dist/bloodhound.min.js"></script>
+    <script>
+      var Phrases = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace("value"),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        local: JSON.parse(document.querySelector("#hid").value),
+      });
+
+      // passing in `null` for the `options` arguments will result in the default
+      // options being used
+      $("#prefetch .typeahead").typeahead(null, {
+        name: "countries",
+        source: Phrases,
+        highlight: true,
+        display: "value",
+        minLength: 1,
+        templates: {
+          empty: ['<div class="empty-message">', "No data", "</div>"].join(
+            "\n"
+          ),
+        },
+      });
+    </script>
+  </body>
+</html>
