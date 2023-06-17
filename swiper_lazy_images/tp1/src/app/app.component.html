@@ -1,0 +1,25 @@
+<div class="container">
+  <select (change)="change($event)" >
+    <option value="" *ngFor="let elm of listComponent" [value]="elm.value">{{elm.key}}</option>
+  </select>
+  <div class="tagsList-wrap">
+    <swiper
+    [loop]="true"
+    [navigation]="true"
+    [slidesPerView]="1"
+    [autoplay]="{ delay: 8000 }"
+    class="carousel-image"
+>
+    <ng-template
+    swiperSlide
+    *ngFor="let image of imgMap | keyvalue;"
+>
+    <div class="swiper-slide-image">
+        <figure class="blur-load" style="background-image:url('{{imgPath + image.key.small}}');">
+            <img  appLazyImage="{{imgPath + image.key.img}}"/>
+        </figure>
+    </div>
+</ng-template>
+</swiper>
+  </div>
+</div>

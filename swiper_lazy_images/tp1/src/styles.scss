@@ -1,0 +1,22 @@
+/* Add application styles & imports to this file! */
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/autoplay";
+.swiper-container {
+  height: 100%;
+  width: 100%;
+}
+.swiper-slide span {
+  background-color: #617b93;
+  padding: 0.7rem 2rem;
+  transition: all 0.2s ease-in-out;
+  font-family: 'Roboto' 'regular';
+  color: #fff;
+}
+.swiper-slide {
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition-property: transform;
+}

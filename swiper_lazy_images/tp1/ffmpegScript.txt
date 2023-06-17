@@ -1,0 +1,7 @@
+
+ffmpeg -i Carrousel_bréviaire_3.jpg -vf scale=20:-1 Carrousel_bréviaire_3-small.jpg 
+ffmpeg -i Carrousel_bréviaire_4.jpg -vf scale=20:-1 Carrousel_bréviaire_4-small.jpg 
+ffmpeg -i x -vf scale=20:-1 -small.jpg 
+
+
+ref #76403 #76417: Mise à jour version angular et modifications des images
